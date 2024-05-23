@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Документ</title>
+    <style>
+        body {
+            background-image: url(https://www.creativefabrica.com/wp-content/uploads/2023/04/02/Nature-Background-Graphics-66003200-1.jpg);
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="ageForm">
+        <p id="ageText"></p>
+    </form>
+
+    <script type="text/javascript">
+        let age = +prompt("Введіть ваш вік", '');
+        let ageText = document.getElementById("ageText");
+
+        if (age >= 18 && age <= 100) {
+            ageText.innerText = "Вам дозволено ввійти";
+        } else {
+            ageText.innerText = "Вхід заборонено";
+        }
+    </script>
+</body>
+
+</html>

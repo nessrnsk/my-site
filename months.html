@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+           background-image: url(https://www.creativefabrica.com/wp-content/uploads/2023/04/02/Nature-Background-Graphics-66003200-1.jpg);
+           background-attachment: fixed;
+           background-position: center;
+           background-size: cover;
+           font-size: 100px; 
+           text-align:center;
+        }
+           
+        form{
+            color:white;
+        }
+       
+   </style>
+</head>
+<body>
+    <form id="monthForm">
+        <label for="monthInput">Введіть ваш місяць народження (число від 1 до 12):</label>
+        <input type="number" id="monthInput" name="monthInput" min="1" max="12">
+        <button type="submit">Перевірити</button>
+    </form>
+
+    <script>
+        document.getElementById('monthForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let month = parseInt(document.getElementById('monthInput').value);
+
+            switch(month) {
+                case 12:
+                case 1:
+                case 2:
+                    alert('Ви народились взимку');
+                    break;
+                case 3:
+                case 4:
+                case 5:
+                    alert('Ви народились навесні');
+                    break;
+                case 6:
+                case 7:
+                case 8:
+                    alert('Ви народились влітку');
+                    break;
+                case 9:
+                case 10:
+                case 11:
+                    alert('Ви народились восени');
+                    break;
+                default:
+                    alert('Це не місяць');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Gagarin</title>
+    <style>
+        body {
+            background-color: aliceblue;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <form id="spaceYearForm">
+        <label for="spaceYearInput" style="color: black; font-size: 18px;">В якому році Юрій Гагарін полетів у космос?</label>
+        <input type="number" id="spaceYearInput" name="spaceYearInput" required>
+        <button type="submit" style="color: black;">Перевірити</button>
+    </form>
+
+    <div id="answer"></div>
+
+    <script>
+        document.getElementById('spaceYearForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let spaceYear = parseInt(document.getElementById('spaceYearInput').value);
+            let answer = document.getElementById('answer');
+
+            if (isNaN(spaceYear)) {
+                answer.innerHTML = "<p>Введіть будь ласка число</p>";
+            } else if (spaceYear < 1961) {
+                answer.innerHTML = "<p>Це дуже рано</p>";
+            } else if (spaceYear > 1961) {
+                answer.innerHTML = "<p>Це дуже пізно</p>";
+            } else if (spaceYear === 1961) {
+                answer.innerHTML = "<p>Так</p>";
+            }
+        });
+    </script>
+</body>
+</html>

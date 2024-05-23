@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: aliceblue;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        p {
+            font-size: 36px;
+            color: black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form id="capitalForm">
+        <label for="capitalInput">Яка столиця Італії?</label>
+        <input type="text" id="capitalInput" name="capitalInput" required>
+        <button type="submit">Перевірити</button>
+    </form>
+
+    <script>
+        document.getElementById('capitalForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let nationalCapital = document.getElementById('capitalInput').value;
+
+            if (nationalCapital === "Рим") {
+                document.body.innerHTML = "<p>Це вірна відповідь!</p>";
+            } else {
+                document.body.innerHTML = "<p>Не правильна відповідь</p>";
+            }
+        });
+    </script>
+</body>
+</html>
